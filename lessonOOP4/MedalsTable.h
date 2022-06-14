@@ -1,5 +1,7 @@
 #pragma once
+#include <iostream>
 #include "MedalRow.h"
+using namespace std;
 class MedalsTable
 {
 public:
@@ -15,5 +17,6 @@ public:
 	MedalRow& operator[](const char* country);
 	const MedalRow& operator[](const char* country)const;
 	void print()const;
+	friend ostream& operator<<(ostream& output, const MedalsTable& a);
 };
 

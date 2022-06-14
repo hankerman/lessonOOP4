@@ -82,3 +82,9 @@ void MedalsTable::print() const
         medalRows[i].print();
     }
 }
+
+ostream& operator<<(ostream& output, const MedalsTable& a)
+{
+    a.print();
+    return output;
+}
