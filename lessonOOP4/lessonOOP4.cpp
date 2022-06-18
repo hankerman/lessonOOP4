@@ -17,6 +17,8 @@ int main()
     std::cout << "\nMedals table #2:\n";
     const MedalsTable mt2{ mt1 };
     cout << mt2;
+    char country[4] = "UKR";
+    mt2(country);
     // раскомментировав следующую строку можно протестировать
     // проверку отсутствия страны в константной таблице 
     // медалей

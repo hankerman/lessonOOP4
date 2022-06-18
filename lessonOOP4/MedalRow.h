@@ -17,5 +17,6 @@ public:
 	int& operator[](int idx);
 	int operator[](int idx)const;
 	void print()const;
+	int getMedal(int i);
 };
 

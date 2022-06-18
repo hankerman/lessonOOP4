@@ -83,6 +83,39 @@ void MedalsTable::print() const
     }
 }
 
+MedalsTable MedalsTable::operator()(const char* country)const
+{
+    int num = findCountry(country);
+    if (num == -1) {
+        cout << "No such country has been found" << endl;
+    }
+    else {
+        int gold, silver, bronze, res;
+
+        gold = medalRows[num].getMedal(0);
+        silver = medalRows[num].getMedal(1);
+        bronze = medalRows[num].getMedal(2);
+
+        if (gold < silver) {
+            if (silver < bronze) {
+                cout << country <<"\tBronze - " << bronze;
+            }
+            else {
+                cout << country << "\tSilver - " << silver;
+            }
+        }
+        else {
+            if (gold < bronze) {
+                cout << country << "\tBronze - " << bronze;
+            }
+            else {
+                cout << country << "\tGold - " << gold;
+            }
+        }
+    }
+    return *this;
+}
+
 ostream& operator<<(ostream& output, const MedalsTable& a)
 {
     a.print();

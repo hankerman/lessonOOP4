@@ -18,5 +18,6 @@ public:
 	const MedalRow& operator[](const char* country)const;
 	void print()const;
 	friend ostream& operator<<(ostream& output, const MedalsTable& a);
+	MedalsTable operator()(const char* country)const;
 };
 

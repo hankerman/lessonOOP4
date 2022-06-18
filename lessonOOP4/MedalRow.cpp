@@ -42,3 +42,8 @@ void MedalRow::print() const
 	}
 	std::cout << " )\n";
 }
+
+int MedalRow::getMedal(int i)
+{
+	return medals[i];
+}
